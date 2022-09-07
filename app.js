@@ -13,6 +13,10 @@ app.get("/dogs", (req, res) => {
   res.send("This page is about dogs.");
 });
 
+app.get("/animal/:typeOfAnimal", (req, res) => {
+  res.send("You are looking for " + req.params.typeOfAnimal);
+});
+
 app.get("*", (req, res) => {
   res.send("Can't find the page.");
 });
