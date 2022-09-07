@@ -2,8 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-  //   res.send("You are on the homepage.");
+  res.send("This is homepage.");
 });
 
 app.get("/cats", (req, res) => {
@@ -12,6 +11,10 @@ app.get("/cats", (req, res) => {
 
 app.get("/dogs", (req, res) => {
   res.send("This page is about dogs.");
+});
+
+app.get("*", (req, res) => {
+  res.send("Can't find the page.");
 });
 
 app.listen(3000, () => {
