@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("You are on the homepage.");
+  res.sendFile(__dirname + "/index.html");
+  //   res.send("You are on the homepage.");
 });
 
 app.get("/cats", (req, res) => {
