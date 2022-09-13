@@ -19,6 +19,11 @@ app.get("/dogs", (req, res) => {
   res.send("This page is about dogs.");
 });
 
+app.get("/bears", (req, res) => {
+  res.status(302);
+  res.sendFile(__dirname + "/moved.html");
+});
+
 app.get("/animal/:typeOfAnimal", (req, res) => {
   res.send("You are looking for " + req.params.typeOfAnimal);
 });
