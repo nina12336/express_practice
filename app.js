@@ -24,7 +24,8 @@ app.get("/animal/:typeOfAnimal", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.send("Can't find the page.");
+  res.status(404);
+  res.sendFile(__dirname + "/error.html");
 });
 
 app.post("/formHandling", (req, res) => {
